@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
@@ -32,11 +34,23 @@ app.get("/", (req, res) => {
     res.send("server running");
 });
 
+// async function connnectDb() {
+//     await mongoose.connect("mongodb://127.0.0.1:27017", {
+//         dbName: "ecom-proj3-db",
+//     });
+//     console.log("Mongodb connected");
+// }
+
 async function connnectDb() {
-    await mongoose.connect("mongodb://127.0.0.1:27017", {
-        dbName: "ecom-proj3-db",
-    });
-    console.log("Mongodb connected");
+    try {
+        await mongoose.connect(process.env.MONGO_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log("✅ MongoDB connected");
+    } catch (err) {
+        console.error("❌ MongoDB connection error:", err);
+    }
 }
 
 connnectDb().catch((err) => {
