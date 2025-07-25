@@ -22,7 +22,6 @@ export class Login {
     this.auth.login(value.email!, value.password!).subscribe((result: any) => {
       let tkn = `Bearer ${result.token}`;
       localStorage.setItem('token', tkn);
-      console.log(result);
       localStorage.setItem('user', JSON.stringify(result.user));
       this.router.navigate(['/']);
     });
