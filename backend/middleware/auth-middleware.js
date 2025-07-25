@@ -37,7 +37,7 @@ function verifyToken(req, res, next) {
     const token = parts[1];
 
     try {
-        const decoded = jwt.verify(token, "secret"); // use env in prod
+        const decoded = jwt.verify(token, process.env.JWT_SECRET); // use env in prod
         req.user = decoded; // ✅ Attach to req.user
         next();
     } catch (err) {
