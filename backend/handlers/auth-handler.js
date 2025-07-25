@@ -27,7 +27,7 @@ async function loginUser(model) {
             email: user.email,
             isAdmin: user.isAdmin,
         }, "secret", {
-            expiresIn: "1h",
+            expiresIn: "1d",
         });
         return { token, user };
     } else {
