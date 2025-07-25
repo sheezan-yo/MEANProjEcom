@@ -1,0 +1,30 @@
+<div class="position-relative">
+    @if (isInWishlist(item)) {
+    <i class="fa-solid fa-heart position-absolute top-0 end-0 m-2 mt-3" (click)="addToWishlist(item)"></i>
+    } @else{
+    <i class="fa-regular fa-heart position-absolute top-0 end-0 m-2 mt-3" (click)="addToWishlist(item)"></i>
+    }
+</div>
+<div class="prodImg d-flex justify-content-center">
+    <a [routerLink]="'/product/'+item._id"><img src="{{item.images}}" alt=""></a>
+</div>
+<div class="details p-2">
+    <h5 [routerLink]="'/product/'+item._id">{{item.name}}</h5>
+    <p class="shortDesc" [routerLink]="'/product/'+item._id">{{item.shortDescription}}</p>
+    <div class="gap-1 d-flex align-items-center justify-content-between">
+        <div class="d-flex gap-2 align-items-center">
+            <h5 class="text-success">{{(+item.price * (1 - +item.discount/100)) |
+                currency:'INR':'symbol':'1.2-2'}}</h5>
+            <h6 class="text-secondary text-decoration-line-through">{{+item.price |
+                currency:'INR':'symbol':'1.2-2'}}</h6>
+            <h6 class="text-danger-emphasis ms-2">{{item.discount}}% OFF</h6>
+        </div>
+        <button class="btn btn-success" (click)="addToCart(item)">
+            @if(isInCart(item._id!)){
+            Remove from Cart
+            }@else{
+            Add to Cart
+            }
+        </button>
+    </div>
+</div>

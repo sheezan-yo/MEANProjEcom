@@ -1,0 +1,37 @@
+ul li a:hover {
+  color: blueviolet;
+}
+
+.cats li {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.title {
+  cursor: pointer;
+}
+
+.fa-heart {
+  margin-right: 4px;
+}
+
+@media only screen and (max-width: 900px) {
+  .wishPara {
+    display: none;
+  }
+  .fa-heart {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .cats {
+    overflow-x: scroll;
+  }
+  .cats li {
+    white-space: nowrap;
+    overflow: visible;
+  }
+}

@@ -1,0 +1,60 @@
+<div class="modal fade" id="logoutModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>Do you want to logout?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+                <button type="button" class="btn btn-danger" (click)="logout()" data-bs-dismiss="modal">Yes,
+                    logout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid mb-2">
+        <a class="title navbar-brand" routerLink="/">
+            <img src="https://th.bing.com/th/id/OIP.jVCgh4Xd1U11Lo5qZSmfnQHaHa?w=176&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            MyStore
+        </a>
+        <div class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                (keyup.enter)="onSearch($event)" [(ngModel)]="searchTerm" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </div>
+        <ul class="d-flex align-items-center m-0 gap-2">
+            @if (auth.isAdmin) {<li><a routerLink="/admin" class="nav-link">{{auth.userName}}</a></li>}
+            @else {<li><a class="nav-link" routerLink="/profile/">{{auth.userName}}</a></li>}
+            @if (auth.isLoggedIn) {
+            @if (!auth.isAdmin) {
+            <button class="btn btn-warning d-flex flex-row align-items-center h-10" routerLink="/carts">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <li class="wishPara">Cart</li>
+            </button>
+            <button class="btn btn-warning d-flex flex-row align-items-center h-10" routerLink="/orders">
+                <span class="material-symbols-outlined">
+                    orders
+                </span>
+                <li class="wishPara">My Orders</li>
+            </button>
+            <button class="btn btn-warning d-flex flex-row align-items-center h-10" routerLink="/wishlists">
+                <i class="fa-solid fa-heart"></i>
+                <li class="wishPara">wishlist</li>
+            </button>
+            }
+            <button class="btn btn-danger h-10" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</button>
+            }
+        </ul>
+    </div>
+    @if (auth.isLoggedIn) {
+    <ul class="cats d-flex align-items-center m-0 gap-3">
+        @for (item of categories; track $index) {
+        <li class="d-flex justify-content-center" (click)="searchCat(item._id!)"><a class="nav-link">{{item.name}}</a>
+        </li>
+        }
+    </ul>
+    }
+</nav>

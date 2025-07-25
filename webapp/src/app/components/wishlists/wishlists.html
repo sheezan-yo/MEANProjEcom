@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <div class="row row-gap-3 justify-content-between">
+        @for (item of wishlist.wishlists; track $index) {
+        <div class="text-center border border-secondary-subtle shadow pb-3">
+            <app-product-card [item]="item"></app-product-card>
+        </div>
+        }@empty{
+        <h4 class="noWish">No items in wishlist...</h4>
+        }
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <!-- filters -->
+        <div class="col-sm-3">
+            <h6 class="text-center mb-2">Filters</h6>
+            <div class="d-flex flex-col gap-3">
+                <mat-form-field>
+                    <mat-label>Category</mat-label>
+                    <mat-select name="categoryId" [(ngModel)]="categoryId" (valueChange)="getProducts()">
+                        <mat-option value="">Category</mat-option>
+                        @for (item of categories; track $index) {
+                        <mat-option [value]="item._id">{{item.name}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Brand</mat-label>
+                    <mat-select name="brandId" [(ngModel)]="brandId" (valueChange)="getProducts()">
+                        <mat-option value="">Brand</mat-option>
+                        @for (item of brands; track $index) {
+                        <mat-option [value]="item._id">{{item.name}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <!-- products -->
+        <div class="col-sm-9">
+            <div class="d-flex justify-content-end">
+                <mat-form-field class="w-min">
+                    <mat-label>Order By</mat-label>
+                    <mat-select (selectionChange)="orderChange($event.value)">
+                        <mat-option [value]="1">Price low to high</mat-option>
+                        <mat-option [value]="-1">Price high to low</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <h6 class="text-center">Products</h6>
+            <div class="container-fluid">
+                <div class="row row-gap-3">
+                    @for (item of products; track $index) {
+                    <div class="col-xl-4 col-lg-6 col-12 text-center border border-secondary-subtle shadow py-3">
+                        <app-product-card [item]="item"></app-product-card>
+                    </div>
+                    }
+                    @empty {
+                    <h6 class="text-center mt-3 fs-3 text-danger">No Product Found</h6>
+                    }
+                </div>
+                <div class="d-flex justify-content-between my-3">
+                    <button mat-raised-button [disabled]="page==1" (click)="pageChange(page-1)">prev</button>
+                    <button mat-raised-button (click)="pageChange(page+1)">next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

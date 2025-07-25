@@ -1,0 +1,91 @@
+.col-sm-3 img {
+  width: 100%;
+  max-height: 50%;
+  overflow: scroll;
+}
+
+.shortDesc {
+  max-height: 20px;
+  overflow: hidden;
+}
+
+.details h5 {
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 1420px) {
+  .prodImg img {
+    width: 200px;
+    height: 220px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 12px;
+  }
+
+  .row div {
+    margin: 0 10px;
+  }
+}
+
+/* for lg t xl */
+@media only screen and (max-width: 1419px) and (min-width: 1090px) {
+  .prodImg img {
+    width: 200px;
+    height: 220px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 12px;
+  }
+
+  .row div {
+    margin: 0 10px;
+  }
+}
+
+/* for sm to lg size */
+@media only screen and (max-width: 1089px) and (min-width: 715px) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+  }
+
+  .row div {
+    margin: 0 10px;
+  }
+
+  .prodImg img {
+    width: 200px;
+    height: 220px;
+  }
+}
+
+/* for smaller than sm */
+@media only screen and (max-width: 714px) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 10px;
+  }
+
+  .row div {
+    margin: 0 10px;
+  }
+
+  .prodImg img {
+    width: 200px;
+    width: 200px;
+  }
+}
+
+.carousel-item img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}

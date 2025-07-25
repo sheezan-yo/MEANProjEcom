@@ -1,0 +1,56 @@
+@media only screen and (min-width: 1420px) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 12px;
+  }
+
+  .row div {
+    margin: 0 10px;
+  }
+}
+
+.noWish {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* for lg t xl */
+@media only screen and (max-width: 1419px) and (min-width: 1090px) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 12px;
+  }
+
+  .row div {
+    margin: 0 10px;
+  }
+}
+
+/* for sm to lg size */
+@media only screen and (max-width: 1089px) and (min-width: 715px) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+  }
+
+  .row div {
+    margin: 0 10px;
+  }
+}
+
+/* for smaller than sm */
+@media only screen and (max-width: 714px) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 10px;
+  }
+
+  .row div {
+    margin: 0 10px;
+  }
+}

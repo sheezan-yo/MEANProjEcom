@@ -1,0 +1,21 @@
+<form [formGroup]="registerForm" class="col-lg-6 offset-lg-3 container mt-3">
+    <h1 class="text-center text-secondary">User Sign-up</h1>
+    <div class="mb-3">
+        <label for="nameInput" class="form-label ms-1">Name</label>
+        <input id="nameInput" type="text" class="form-control" placeholder="Enter your Name" formControlName="name">
+    </div>
+    <div class="mb-3">
+        <label for="emailInput" class="form-label ms-1">Email</label>
+        <input id="emailInput" type="email" class="form-control" placeholder="Enter your Email" formControlName="email">
+    </div>
+    <div class="mb-3">
+        <label for="passInput" class="form-label ms-1">Password</label>
+        <input id="passInput" type="password" class="form-control" placeholder="Enter your Password"
+            formControlName="password">
+    </div>
+    <div class="mt-5 text-center">
+        <button class="btn btn-primary form-control mb-3" [disabled]="registerForm.invalid" (click)="register()">Sign
+            Up</button>
+        <a routerLink="/login">Already have an account, Click here to login</a>
+    </div>
+</form>
