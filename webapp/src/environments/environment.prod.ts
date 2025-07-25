@@ -1,4 +1,4 @@
 export const environment = {
     apiurl: process.env["NG_APP_BASE_URL"]
-    // apiUrl: 'http://localhost:3000'
+    // apiUrl: 'http://myshop.test'
 };
