@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Order } from '../../../services/order';
 import { orderType, productType } from '../../../dataTypes';
 import { CommonModule } from '@angular/common';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @Component({

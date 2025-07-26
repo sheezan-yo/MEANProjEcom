@@ -57,8 +57,8 @@ connnectDb().catch((err) => {
     console.error(err);
 });
 
-app.get('/api', (req, res)=>{
-    res.json({message:"API is working"});
+app.get('/api', (req, res) => {
+    res.json({ message: "API is working" });
 });
 
 app.use((req, res, next) => {

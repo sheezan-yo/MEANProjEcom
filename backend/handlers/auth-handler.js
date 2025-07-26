@@ -26,9 +26,11 @@ async function loginUser(model) {
             name: user.name,
             email: user.email,
             isAdmin: user.isAdmin,
-        }, process.env.JWT_SECRET, {
-            expiresIn: "1d",
-        });
+        }, process.env.JWT_SECRET,
+            // "secret",
+            {
+                expiresIn: "1d",
+            });
         return { token, user };
     } else {
         return null;
