@@ -17,21 +17,19 @@ ul li a:hover {
   margin-right: 4px;
 }
 
+.cats {
+  overflow-x: scroll;
+}
+.cats li {
+  white-space: nowrap;
+  overflow: visible;
+}
+
 @media only screen and (max-width: 900px) {
   .wishPara {
     display: none;
   }
   .fa-heart {
     margin-right: 0;
-  }
-}
-
-@media only screen and (max-width: 690px) {
-  .cats {
-    overflow-x: scroll;
-  }
-  .cats li {
-    white-space: nowrap;
-    overflow: visible;
   }
 }
