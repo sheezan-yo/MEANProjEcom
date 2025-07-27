@@ -20,9 +20,22 @@ ul li a:hover {
 .cats {
   overflow-x: scroll;
 }
+.cats::-webkit-scrollbar {
+  display: none;
+}
 .cats li {
   white-space: nowrap;
   overflow: visible;
+}
+
+@media only screen and (max-width: 810px) {
+  .logInfo {
+    justify-content: end;
+  }
+
+  .jc-810 {
+    justify-content: space-between;
+  }
 }
 
 @media only screen and (max-width: 900px) {
