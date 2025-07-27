@@ -67,7 +67,7 @@
 }
 
 /* for smaller than sm */
-@media only screen and (max-width: 714px) {
+@media only screen and (max-width: 714px) and (min-width: 401px) {
   .row {
     display: grid;
     grid-template-columns: 1fr;
@@ -80,7 +80,25 @@
 
   .prodImg img {
     width: 200px;
-    width: 200px;
+    height: 200px;
+  }
+}
+
+// mobile width
+@media only screen and (max-width: 400px) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 10px;
+  }
+
+  .row div {
+    margin: 0 10px;
+  }
+
+  .prodImg img {
+    width: 180px;
+    height: 180px;
   }
 }
 
