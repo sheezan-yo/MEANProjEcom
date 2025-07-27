@@ -32,7 +32,7 @@ export class ProductForm implements OnInit {
     categoryId: [null, [Validators.required]],
     brandId: [null, [Validators.required]],
     isFeatured: [false],
-    isNew: [false]
+    isNewProduct: [false]
   });
 
   ngOnInit(): void {
