@@ -4,6 +4,7 @@ A fully functional ecommerce platform made using MEAN stack.
 ## Features:
 - Admin Interface: Consists of almost all functionality an admin needs, updating products, orders, their prices, etc.
 - User Interface: Consists of Homepage, product detail page, shopping cart, wishlist, order page.
+- Searching: Can search for any product by its name or description.
 - Authentication: Signup and login authentication.
 
 ## Technologies used:
